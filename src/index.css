@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a.active {
+  position: relative; 
+}
+
+a.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%; 
+  background: greenyellow;
+}
+.fc {
+  text-align: center;
+}
+.fc-toolbar-chunk{
+  display: flex;
+
+}
