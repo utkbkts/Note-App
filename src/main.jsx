@@ -4,12 +4,12 @@ import App from "./App.jsx";
 import "./index.css";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
-import Theme from "./theme/Theme.js";
+import theme from "./theme/Theme.js";
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ChakraProvider theme={Theme}>
-    <ColorModeScript initialColorMode="dark" />
+  <ChakraProvider theme={theme}>
+    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <BrowserRouter>
-          <App />
+      <App />
     </BrowserRouter>
   </ChakraProvider>
 );

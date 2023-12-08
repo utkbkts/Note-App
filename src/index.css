@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background-color: #1a202c !important;
+}
 a.active {
   position: relative; 
 }
