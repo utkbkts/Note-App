@@ -7,7 +7,9 @@ import Important from "./pages/Important";
 import Calendar from "./pages/Calendar";
 import Completed from "./pages/Completed";
 import Detail from "./pages/Detail";
+
 const App = () => {
+
   return (
     <div>
       <PageLayout>
