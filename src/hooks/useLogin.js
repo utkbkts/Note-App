@@ -18,8 +18,9 @@ const useLogin = () => {
   const userLogin = useAuthStore((state) => state.login);
 
   const login = async () => {
-    const googleProvider = new GoogleAuthProvider();
     try {
+      const googleProvider = new GoogleAuthProvider();
+
       const provider = await signInWithPopup(auth, googleProvider);
 
       const usersRef = collection(db, "users");
@@ -40,7 +41,7 @@ const useLogin = () => {
           profilePicURL: "",
           posts: [],
           createdAt: Date.now(),
-          calendar: []
+          calendar: [],
         };
 
         await setDoc(doc(db, "users", provider.user.uid), newUserDoc);

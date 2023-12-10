@@ -12,28 +12,27 @@ const Sidebar = () => {
   const pathname = location.pathname;
   const AuthUser = useAuthStore((state) => state.user);
   const { login } = useLogin();
-  const showToast = useShowToast()
+  const showToast = useShowToast();
   const { Logout } = useLogout();
-  const navigate = useNavigate()
-  const handleLogin=async()=>{
+  const navigate = useNavigate();
+  const handleLogin = async () => {
     try {
-      await login()
-      window.location.reload()
+      await login();
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
-  }
-  const handleSignOut=async()=>{
+  };
+  const handleSignOut = async () => {
     try {
-      await Logout()
-      navigate("/")
-      window.location.reload()
+      await Logout();
+      navigate("/");
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
- 
   return (
     <Box
       display={"flex"}
@@ -44,9 +43,10 @@ const Sidebar = () => {
       py={15}
       gap={4}
     >
-      <Link to={`/${AuthUser ? AuthUser?.username :""}`}>
+      <Link to={`/${AuthUser ? AuthUser?.username : ""}`}>
         <Box
-          display={{ base: "column", md: "flex" }}
+          display={"flex"}
+          flexDir={{base:"column",md:"row"}}
           alignItems={"center"}
           justifyContent={"center"}
           gap={4}
@@ -56,11 +56,18 @@ const Sidebar = () => {
           <Flex flexDirection={"column"}>
             <Text
               fontSize={{ base: "12px", md: "14px" }}
-              borderBottom={"1px solid white"}
+              borderBottom={AuthUser ? "1px solid white" : ""}
+              textAlign={{ base: "center", md: "left" }}
+              lineHeight={"24px"}
             >
               {AuthUser?.username}
             </Text>
-            <Text fontSize={{ base: "12px", md: "14px" }}>{AuthUser?.bio}</Text>
+            <Text
+              textAlign={{ base: "center", md: "left" }}
+              fontSize={{ base: "12px", md: "14px" }}
+            >
+              {AuthUser?.bio}
+            </Text>
           </Flex>
         </Box>
       </Link>
@@ -164,7 +171,7 @@ const Sidebar = () => {
         </NavLink>
       </Flex>
       <Tooltip>
-        <Flex>
+        <Flex padding={{base:"10px",md:"0"}}>
           {AuthUser ? (
             <Button onClick={handleSignOut}>Sign out</Button>
           ) : (

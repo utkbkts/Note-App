@@ -7,7 +7,7 @@ const PageLayout = ({ children }) => {
   const {pathname} = useLocation();
   return (
     <Flex py={10}>
-      {pathname !== "/auth" ? (
+      {pathname !== "/admin" && pathname !=="/adminlogin" && pathname !=="/admindashboard" ? (
         <Box borderRadius={"10px"} w={{ base: "w-full", md: "240px" }} border={"1px solid darkgray"} h={"100vh"}>
           <Sidebar />
         </Box>
