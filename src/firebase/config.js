@@ -3,7 +3,7 @@ import {getFirestore} from "firebase/firestore"
 import {getStorage} from "firebase/storage"
 import {getAuth} from "firebase/auth"
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_REACT_API_KEY,
+  apiKey: import.meta.env.VITE_API_URL,
   authDomain: "notecalendar-2a4b9.firebaseapp.com",
   projectId: "notecalendar-2a4b9",
   storageBucket: "notecalendar-2a4b9.appspot.com",
