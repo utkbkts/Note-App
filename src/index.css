@@ -31,3 +31,14 @@ a.active::before {
   display: flex;
 
 }
+@media(max-width:768px){
+  .css-755441{
+  left: 25%;
+}
+  .css-12x5f2x{
+    width: 100%;
+  }
+  .css-1eussra{
+        flex-direction: column;
+  }
+}
