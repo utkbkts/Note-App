@@ -33,10 +33,10 @@ a.active::before {
 }
 @media(max-width:768px){
   .css-755441{
-  left: 25%;
+  left: 25% !important;
 }
   .css-12x5f2x{
-    width: 100%;
+    width: 100% !important;
   }
   .css-1eussra{
         flex-direction: column;
